@@ -3,12 +3,14 @@ package christmas.view
 import christmas.model.*
 import christmas.util.Constants.BADGE_MESSAGE
 import christmas.util.Constants.DAILY_MESSAGE
+import christmas.util.Constants.DISCOUNT_LIST_MESSAGE
 import christmas.util.Constants.EVENT_MESSAGE
 import christmas.util.Constants.MENU_MESSAGE
 import christmas.util.Constants.NONE_MESSAGE
 import christmas.util.Constants.NUMBER_FORMAT
 import christmas.util.Constants.ORDER_MESSAGE
 import christmas.util.Constants.PAYMENT_MESSAGE
+import christmas.util.Constants.PRESENTATION_MENU
 import christmas.util.Constants.PRESENTATION_MENU_MESSAGE
 import christmas.util.Constants.PRESENTATION_MESSAGE
 import christmas.util.Constants.PRICE_MESSAGE
@@ -62,12 +64,13 @@ class OutputView {
     }
 
     fun printDiscountList(total: Total, discount: Discount) {
+        println(DISCOUNT_LIST_MESSAGE)
         if(total.totalDiscount != ZERO) {
             printDiscount(discount.daily, DAILY_MESSAGE)
             printDiscount(discount.weekly, WEEKLY_MESSAGE)
             printDiscount(discount.weekend, WEEKEND_MESSAGE)
             printDiscount(discount.special, SPECIAL_MESSAGE)
-            printDiscount(total.presentation, PRESENTATION_MESSAGE)
+            printDiscount(total.presentation, PRESENTATION_MENU)
             return
         }
         println(NONE_MESSAGE)

@@ -29,22 +29,28 @@ class Controller(private val inputView: InputView, private val outputView: Outpu
     }
 
     private fun getVisitDate() {
-        try {
-            val input = inputView.getDate()
-            visit = Visit(input)
-        } catch(e: IllegalArgumentException) {
-            print(e.message)
-            getVisitDate()
+        var isValidInput = false
+        while(!isValidInput) {
+            try {
+                val input = inputView.getDate()
+                visit = Visit(input)
+                isValidInput = true
+            } catch(e: IllegalArgumentException) {
+                print(e.message)
+            }
         }
     }
 
     private fun getOrder() {
-        try {
-            val input = inputView.getMenu()
-            menuList = MenuList(input)
-        } catch(e: IllegalArgumentException) {
-            print(e.message)
-            getOrder()
+        var isValidInput = false
+        while(!isValidInput) {
+            try {
+                val input = inputView.getMenu()
+                menuList = MenuList(input)
+                isValidInput = true
+            } catch(e: IllegalArgumentException) {
+                print(e.message)
+            }
         }
     }
 

@@ -41,6 +41,13 @@ class InputTest {
     }
 
     @Test
+    fun `입력된 메뉴 개수의 총합이 20을 초과한 경우`() {
+        assertThrows<IllegalArgumentException> {
+            Validator.validateTotalCount(listOf(10, 11))
+        }
+    }
+
+    @Test
     fun `입력된 메뉴가 음료수만 존재하는 경우`() {
         assertThrows<IllegalArgumentException> {
             Validator.validateBeverage(mapOf("제로콜라" to 1))

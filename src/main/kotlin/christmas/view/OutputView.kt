@@ -52,9 +52,11 @@ class OutputView {
         println(PRESENTATION_MENU_MESSAGE)
         if (total.presentation != ZERO) {
             println(PRESENTATION_MENU)
+            println()
             return
         }
         println(NONE_MESSAGE)
+        println()
     }
 
     private fun printDiscount(discount: Int, message: String) {
@@ -75,9 +77,11 @@ class OutputView {
             return
         }
         println(NONE_MESSAGE)
+        println()
     }
 
     fun printTotalDiscount(total: Total) {
+        println()
         val formattedDiscount = String.format(NUMBER_FORMAT, total.totalDiscount)
         println(String.format(TOTAL_DISCOUNT_MESSAGE, formattedDiscount))
     }

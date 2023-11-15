@@ -49,8 +49,9 @@ class OutputView {
     }
 
     fun printPresentation(total: Total) {
+        println(PRESENTATION_MENU_MESSAGE)
         if (total.presentation != ZERO) {
-            println(PRESENTATION_MENU_MESSAGE)
+            println(PRESENTATION_MENU)
             return
         }
         println(NONE_MESSAGE)
@@ -70,7 +71,7 @@ class OutputView {
             printDiscount(discount.weekly, WEEKLY_MESSAGE)
             printDiscount(discount.weekend, WEEKEND_MESSAGE)
             printDiscount(discount.special, SPECIAL_MESSAGE)
-            printDiscount(total.presentation, PRESENTATION_MENU)
+            printDiscount(total.presentation, PRESENTATION_MESSAGE)
             return
         }
         println(NONE_MESSAGE)

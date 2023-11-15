@@ -16,18 +16,18 @@ class MenuList(input: String) {
 
     init {
         val convertedMap = convert(input)
-        validateCounts(convertedMap.values)
-        validateTotalCount(convertedMap.values)
-        validateMenuNames(convertedMap)
-        validateDuplicate(input, convertedMap)
-        validateBeverage(convertedMap)
-        _menus = convertedMap
+        validateCounts(convertedMap)
+        _menus = convertedMap.mapValues { it.value.toInt() }
+        validateTotalCount(_menus.values)
+        validateMenuNames(_menus)
+        validateDuplicate(input, _menus)
+        validateBeverage(_menus)
     }
 
-    private fun convert(input: String): Map<String, Int> {
+    private fun convert(input: String): Map<String, String> {
         return input.split(MENU_SEPARATOR).associate { item ->
             val (name, count) = item.split(COUNT_SEPARATOR)
-            name to count.toInt()
+            name to count
         }
     }
 }

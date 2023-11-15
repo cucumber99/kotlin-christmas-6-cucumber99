@@ -20,16 +20,16 @@ class Total(
         get() = _totalDiscount
 
     init {
-        _presentation = getPresentation()
+        _presentation = calculatePresentation()
         _totalDiscount = discount + _presentation
-        _payment = getPayment() - _totalDiscount
+        _payment = calculatePayment() - _totalDiscount
     }
 
-    private fun getPayment(): Int {
+    private fun calculatePayment(): Int {
         return price - discount
     }
 
-    private fun getPresentation(): Int {
+    private fun calculatePresentation(): Int {
         if(price >= PRESENTATION_AMOUNT) {
             return Menu.CHAMPAGNE.price
         }

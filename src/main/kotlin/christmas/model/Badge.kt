@@ -14,10 +14,10 @@ class Badge(private val discount: Int) {
         get() = _badge
 
     init {
-        _badge = getBadge()
+        _badge = makeBadge()
     }
 
-    private fun getBadge(): String {
+    private fun makeBadge(): String {
         return when {
             discount >= SANTA_BOUNDARY -> SANTA_BADGE
             discount >= TREE_BOUNDARY -> TREE_BADGE

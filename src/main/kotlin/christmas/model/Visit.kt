@@ -16,6 +16,6 @@ class Visit (private val _date: Int){
     }
 
     private fun convertDate(): Int {
-        return (_date % 7 + 3) % 7 + 1
+        return (_date + 4) % 7 + 1
     }
 }

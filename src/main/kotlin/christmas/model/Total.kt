@@ -22,7 +22,7 @@ class Total(
     init {
         _presentation = calculatePresentation()
         _totalDiscount = discount + _presentation
-        _payment = calculatePayment() - _totalDiscount
+        _payment = calculatePayment()
     }
 
     private fun calculatePayment(): Int {

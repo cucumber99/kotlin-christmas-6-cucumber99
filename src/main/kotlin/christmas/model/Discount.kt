@@ -35,6 +35,18 @@ class Discount(
     val discount: Int
         get() = _discount
 
+    val daily: Int
+        get() = _daily
+
+    val weekly: Int
+        get() = _weekly
+
+    val weekend: Int
+        get() = _weekend
+
+    val special: Int
+        get() = _special
+
     init {
         _daily = dailyDiscount()
         _weekly = weeklyDiscount()

@@ -12,7 +12,7 @@ class Price(private val menuList: Map<String, Int>) {
         _price = calculatePrice()
     }
 
-    fun calculatePrice(): Int {
+    private fun calculatePrice(): Int {
         var totalPrice = ZERO
         menuList.forEach { (menuName, quantity) ->
             val menu = Menu.entries.first { it.menuName == menuName }

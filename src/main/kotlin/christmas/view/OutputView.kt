@@ -57,7 +57,7 @@ class OutputView {
     private fun printDiscount(discount: Int, message: String) {
         if (discount != ZERO) {
             val formattedDiscount = String.format(NUMBER_FORMAT, discount)
-            println(String.format(message, "-$formattedDiscount"))
+            println(String.format(message, formattedDiscount))
         }
     }
 
@@ -80,7 +80,7 @@ class OutputView {
 
     fun printPayment(total: Total) {
         val formattedPayment = String.format(NUMBER_FORMAT, total.payment)
-        println(String.format(PAYMENT_MESSAGE, "-$formattedPayment"))
+        println(String.format(PAYMENT_MESSAGE, formattedPayment))
     }
 
     fun printBadge(badge: Badge) {

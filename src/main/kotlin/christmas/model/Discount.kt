@@ -64,7 +64,7 @@ class Discount(
             val dessertCount = menuList.filterKeys{ it in DESSERT }.values.sumOf { it.toInt() }
             return dessertCount * DISCOUNT_AMOUNT
         }
-        return 0
+        return ZERO
     }
 
     private fun weekendDiscount(): Int {
@@ -72,14 +72,14 @@ class Discount(
             val mainCount = menuList.filterKeys{ it in MAIN }.values.sumOf { it.toInt() }
             return mainCount * DISCOUNT_AMOUNT
         }
-        return 0
+        return ZERO
     }
 
     private fun specialDiscount(): Int {
         if(visit.day == SUNDAY || visit.date == CHRISTMAS) {
             return SPECIAL_DISCOUNT
         }
-        return 0
+        return ZERO
     }
 
     private fun calculateDiscount(): Int {

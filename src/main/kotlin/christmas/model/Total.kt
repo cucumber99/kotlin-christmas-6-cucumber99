@@ -8,6 +8,7 @@ class Total(
 ) {
     private val _payment: Int
     private val _presentation: Int
+    private val _totalDiscount: Int
 
     val payment: Int
         get() = _payment
@@ -15,9 +16,13 @@ class Total(
     val presentation: Int
         get() = _presentation
 
+    val totalDiscount: Int
+        get() = _totalDiscount
+
     init {
         _presentation = getPresentation()
-        _payment = getPayment() + _presentation
+        _totalDiscount = discount + _presentation
+        _payment = getPayment() - _totalDiscount
     }
 
     private fun getPayment(): Int {

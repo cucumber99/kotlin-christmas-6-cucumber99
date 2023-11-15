@@ -1,9 +1,6 @@
 package christmas.view
 
-import christmas.model.Badge
-import christmas.model.Discount
-import christmas.model.MenuList
-import christmas.model.Total
+import christmas.model.*
 import christmas.util.Constants.BADGE_MESSAGE
 import christmas.util.Constants.DAILY_MESSAGE
 import christmas.util.Constants.EVENT_MESSAGE
@@ -31,8 +28,8 @@ class OutputView {
         println(ORDER_MESSAGE)
     }
 
-    fun printEventMessage(date: Int) {
-        println(String.format(EVENT_MESSAGE, date))
+    fun printEventMessage(visit: Visit) {
+        println(String.format(EVENT_MESSAGE, visit.date))
     }
 
     fun printOrder(menu: MenuList) {
@@ -44,8 +41,8 @@ class OutputView {
         println()
     }
 
-    fun printPrice(price: Int) {
-        val formattedPrice = String.format(NUMBER_FORMAT, price)
+    fun printPrice(price: Price) {
+        val formattedPrice = String.format(NUMBER_FORMAT, price.price)
         println(String.format(PRICE_MESSAGE, formattedPrice))
     }
 
